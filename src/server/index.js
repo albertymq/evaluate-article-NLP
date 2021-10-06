@@ -36,7 +36,20 @@ app.get("/test", function (req, res) {
   res.send(mockAPIResponse);
 });
 
+//getApiKey for request
 app.get("/getApiKey", function (req, res) {
     const json = {ApiKey: process.env.API_KEY}
   res.send(json);
 });
+
+//postData into projectData
+const projectData = {}
+app.post("/addAnalysis",function(req,res){
+    projectData = {
+        agreement: req.body.agreement,
+        confid: req.body.confid,
+        irony: req.body.irony,
+        content: req.body.content,
+    }
+});
+

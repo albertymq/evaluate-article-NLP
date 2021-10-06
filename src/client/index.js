@@ -68,6 +68,10 @@ const reqToMeaningCloud = async (apiKey, content) => {
 };
 
 //testing reqToMeaningCloud
-reqToMeaningCloud("5efe222f21cc3dcd006e7e2a919077d0","I'm very happy to learn Udacity")
+reqToMeaningCloud("5efe222f21cc3dcd006e7e2a919077d0","Although I'm very happy to learn Udacity, I don't like that hard homeworks.")
+
+//postData back to Server
+
+//update the UI to show the Text and the analysis
 
 export { checkForName, handleSubmit, onBlur, postData, getApiKey };
