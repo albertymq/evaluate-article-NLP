@@ -1,7 +1,7 @@
 function checkForName(inputText) {
     console.log("::: Running checkForName :::", inputText);
     let names = [
-        "Picard",
+        "picard",
         "Janeway",
         "Kirk",
         "Archer",
