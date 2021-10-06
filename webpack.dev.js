@@ -1,12 +1,17 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 
 module.exports = {
   entry: "./src/client/index.js",
   mode: "development",
   devtool: "source-map",
+  output: {
+    libraryTarget: "var",
+    library: "Client",
+  },
   module: {
     rules: [
       {
@@ -18,6 +23,10 @@ module.exports = {
         test: "/.css$/",
         exclude: /node_modules/,
         loader: "babel-loader",
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -31,6 +40,7 @@ module.exports = {
       verbose: true,
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
-    })
+    }),
+
   ],
 };
