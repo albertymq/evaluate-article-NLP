@@ -3,6 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+           </script>
     </head>
 
     <body>
@@ -19,14 +28,21 @@
         <main>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="content" type="text" name="input" value="" onblur="Client.onBlur()" placeholder="Please put the article you want to evaluate here">
+                    <input id="content" type="text" name="input" value="" onblur="Client.onBlur()" placeholder="Although I'm very happy to learn Udacity, I don't like the price of the course.">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             </section>
 
-            <section>
+            <section class="result">
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results">
+                    <div class="analysis" id="contentText"></div>
+                    <div class="analysis" id="agreement"></div>
+                    <div id="confidence" class="analysis"></div>
+                    <div id="irony" class="analysis"></div>
+                    <div id="subjectivity" class="analysis"></div>
+                    <div id="remainCredits" class="analysis"></div>
+                </div>
             </section>
         </main>
 
