@@ -29,14 +29,38 @@ app.get("/", function (req, res) {
 app.listen(8081, function () {
   console.log("Example app listening on port 8081!");
   //check whether Environment Variable works
-  console.log(`Your API key is ${process.env.API_KEY}`);
+  console.log(
+    `Your API key is ${process.env.API_KEY}, delete this before submitting`
+  );
 });
 
 app.get("/test", function (req, res) {
   res.send(mockAPIResponse);
 });
 
+//getApiKey for request
 app.get("/getApiKey", function (req, res) {
-    const json = {ApiKey: process.env.API_KEY}
+  const json = { ApiKey: process.env.API_KEY };
   res.send(json);
+});
+
+//postData into projectData
+let projectData = {};
+app.post("/addAnalysis", function (req, res) {
+  console.log(req.body);
+  (projectData = {
+    agreement: req.body.agreement,
+    confid: req.body.confid,
+    irony: req.body.irony,
+    content: req.body.content,
+    subjectivity: req.body.subjectivity,
+    remainCredits: req.body.remainCredits,
+  }),
+    console.log("Data post", projectData);
+  res.send(projectData);
+});
+
+app.get("/all", function (req, res) {
+  res.send(projectData);
+  console.log("Data sent", projectData);
 });
