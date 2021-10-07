@@ -1,5 +1,3 @@
-import { updateUI } from "..";
-
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -22,7 +20,7 @@ function handleSubmit(event) {
         content: formText,
         remainCredits: data.status.remaining_credits,
       }).then(function(newdata){
-          updateUI(newdata);
+          Client.updateUI(newdata);
       });
     });
   });

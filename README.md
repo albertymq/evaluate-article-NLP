@@ -1,7 +1,5 @@
 # evaluate-article-NLP
  
-since running out of time, so just made small changes in Scss file to show some styling
-
 Added OnBlur funciont: When you leave the input field, a function is triggered which transforms the input text to Lower case.
 
 1. type in the Text: "Although I'm very happy to learn Udacity, I don't like that hard homeworks."
