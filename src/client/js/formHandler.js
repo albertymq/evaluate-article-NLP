@@ -3,7 +3,6 @@ function handleSubmit(event) {
 
   // check what text was put into the form field
   const formText = document.getElementById("content").value;
-  Client.checkForName(formText);
 
   console.log("::: Form Submitted :::");
 
