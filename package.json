@@ -1,5 +1,5 @@
 {
-  "name": "evaluate with NLP",
+  "name": "evaluate-article-NLP",
   "version": "1.0.0",
   "main": "index.js",
   "jest": {
