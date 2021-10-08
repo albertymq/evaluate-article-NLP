@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "jest": {
+    "verbose":true,
     "moduleFileExtensions": ["js", "jsx"],
     "moduleDirectories": ["node_modules", "bower_components", "shared"],
     "moduleNameMapper": {
