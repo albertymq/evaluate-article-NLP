@@ -1,7 +1,11 @@
+import "babel-polyfill";
 import { onBlur } from "../src/client";
 
-discribe("first test", () => {
-  test("onBlur", () => {
-    expect(onBlur()).toBeNull;
-  });
+
+test("onBlur", () => {
+  document.body.innerHTML='<input id="content">'
+  document.getElementById("content").value = "TESTING"
+  expect(onBlur()).toBeNull;
 });
+
+
